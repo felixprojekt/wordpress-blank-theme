@@ -27,29 +27,10 @@ if (function_exists('add_theme_support'))
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
+    add_image_size('photo', 1440, '', true); // Container width Thumbnail
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -92,14 +73,8 @@ function theme_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
-
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
-
         wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('themescripts'); // Enqueue it!
+        wp_enqueue_script('themescripts'); 
     }
 }
 
@@ -108,18 +83,16 @@ function theme_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
         wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
+        wp_enqueue_script('scriptname');
     }
 }
 
 // Load HTML5 Blank styles
 function theme_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('theme'); // Enqueue it!
+    wp_enqueue_style('theme');
 }
 
 // Register HTML5 Blank Navigation
@@ -127,8 +100,6 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'theme'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'theme'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'theme') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -192,16 +163,6 @@ if (function_exists('register_sidebar'))
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
-    ));
-}
-
-// Remove wp_head() injected Recent Comment styles
-function my_remove_recent_comments_style()
-{
-    global $wp_widget_factory;
-    remove_action('wp_head', array(
-        $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
-        'recent_comments_style'
     ));
 }
 
@@ -346,7 +307,6 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
 // Remove Actions
@@ -398,38 +358,32 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
 {
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
     register_post_type('html5-blank', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'theme'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'theme'),
+            'name' => __('CustomPosts', 'theme'), // Rename these to suit
+            'singular_name' => __('CustomPost', 'theme'),
             'add_new' => __('Add New', 'theme'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'theme'),
+            'add_new_item' => __('Add New', 'theme'),
             'edit' => __('Edit', 'theme'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'theme'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'theme'),
-            'view' => __('View HTML5 Blank Custom Post', 'theme'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'theme'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'theme'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'theme'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'theme')
+            'edit_item' => __('Edit', 'theme'),
+            'new_item' => __('New', 'theme'),
+            'view' => __('View', 'theme'),
+            'view_item' => __('View', 'theme'),
+            'search_items' => __('Search', 'theme'),
+            'not_found' => __('Not found', 'theme'),
+            'not_found_in_trash' => __('Not found in Trash', 'theme')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
+        'menu_icon' => 'dashicons-welcome-write-blog',
         'supports' => array(
             'title',
             'editor',
-            'excerpt',
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
     ));
 }
 
