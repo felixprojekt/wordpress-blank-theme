@@ -14,20 +14,16 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<!-- wrapper -->
 		<div class="wrapper">
-
-			<!-- header -->
+			
 			<header class="header clear" role="banner">
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
+				<div class="logo">
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+					</a>
+				</div>
 
-					<nav class="nav" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-					</nav>
-
+				<nav class="nav" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+				</nav>
 			</header>
-			<!-- /header -->
