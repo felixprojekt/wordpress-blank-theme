@@ -181,6 +181,11 @@ a img.aligncenter {
     font-weight: 600;
 }
 
+.screenReaderElement {
+	position: absolute;
+	left: -999999999px;
+}
+
 /*------------------------------------*\
     PRINT
 \*------------------------------------*/
