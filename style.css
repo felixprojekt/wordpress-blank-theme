@@ -32,6 +32,7 @@ body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color:#444;
 }
+
 /* clear */
 .clear:before,
 .clear:after {
@@ -47,7 +48,7 @@ body {
 }
 img {
 	max-width:100%;
-	vertical-align:bottom;
+	height: auto;
 }
 a {
 	color:#444;
