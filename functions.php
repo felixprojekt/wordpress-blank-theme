@@ -372,8 +372,9 @@ function create_post_type_html5()
             'not_found' => __('Not found', 'theme'),
             'not_found_in_trash' => __('Not found in Trash', 'theme')
         ),
-        //'show_in_rest' => true, // Uncomment this if you want to use Gutenberg
         'public' => true,
+        'can_export' => true, // Allows export in Tools > Export
+        //'show_in_rest' => true, // Uncomment this if you want to use Gutenberg with this CPT
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'menu_icon' => 'dashicons-welcome-write-blog',
@@ -382,8 +383,9 @@ function create_post_type_html5()
             'editor',
             'thumbnail',
             'revisions',
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
+            // 'page-attributes', // Allows menu_order and other page-like attributes
+        ), 
+        
     ));
 }
 
