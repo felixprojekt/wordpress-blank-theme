@@ -372,6 +372,7 @@ function create_post_type_html5()
             'not_found' => __('Not found', 'theme'),
             'not_found_in_trash' => __('Not found in Trash', 'theme')
         ),
+        
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
@@ -379,7 +380,8 @@ function create_post_type_html5()
         'supports' => array(
             'title',
             'editor',
-            'thumbnail'
+            'thumbnail',
+            'revisions',
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
     ));
