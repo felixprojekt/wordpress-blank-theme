@@ -372,7 +372,7 @@ function create_post_type_html5()
             'not_found' => __('Not found', 'theme'),
             'not_found_in_trash' => __('Not found in Trash', 'theme')
         ),
-        
+        //'show_in_rest' => true, // Uncomment this if you want to use Gutenberg
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
