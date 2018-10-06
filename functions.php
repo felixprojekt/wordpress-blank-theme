@@ -73,7 +73,7 @@ function theme_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1'); // Custom scripts
         wp_enqueue_script('themescripts'); 
     }
 }
@@ -82,7 +82,7 @@ function theme_header_scripts()
 function theme_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
+        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1'); // Conditional script(s)
         wp_enqueue_script('scriptname');
     }
 }
@@ -91,7 +91,7 @@ function theme_conditional_scripts()
 function theme_styles()
 {
 
-    wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), '1', 'all');
     wp_enqueue_style('theme');
 }
 
@@ -143,7 +143,6 @@ function add_slug_to_body_class($classes)
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar'))
 {
-    // Define Sidebar Widget Area 1
     register_sidebar(array(
         'name' => __('Widget Area 1', 'theme'),
         'description' => __('Description for this widget-area...', 'theme'),
@@ -154,7 +153,6 @@ if (function_exists('register_sidebar'))
         'after_title' => '</h3>'
     ));
 
-    // Define Sidebar Widget Area 2
     register_sidebar(array(
         'name' => __('Widget Area 2', 'theme'),
         'description' => __('Description for this widget-area...', 'theme'),

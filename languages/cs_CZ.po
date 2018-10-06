@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: G18 theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-06 14:09+0000\n"
+"PO-Revision-Date: 2018-10-06 14:15+0000\n"
+"Last-Translator: galerie <milan.svehla@gmail.com>\n"
+"Language-Team: Čeština\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : "
+"2;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: search.php:7
+#, php-format
+msgid "%s Search Results for "
+msgstr "Výsledky vyhledávání pro %s"
+
+#: author.php:15
+msgid "About "
+msgstr "O Wordpressu"
+
+#: functions.php:394 functions.php:419 functions.php:420
+msgid "Add New"
+msgstr "Přidat"
+
+#: functions.php:389
+msgid "All"
+msgstr "Vše"
+
+#: archive.php:7
+msgid "Archives"
+msgstr "Archiv"
+
+#: author.php:9
+msgid "Author Archives for "
+msgstr "Archiv autora"
+
+#: functions.php:396
+msgid "Categories"
+msgstr "Kategorie"
+
+#: category.php:7
+msgid "Categories for "
+msgstr "Kategorie "
+
+#. Name of the template
+msgid "Demo Page Template"
+msgstr "Demo Page Template"
+
+#: functions.php:392 functions.php:421 functions.php:422
+msgid "Edit"
+msgstr "Upravit"
+
+#. Name of the theme
+msgid "G18 theme"
+msgstr "G18 theme"
+
+#: functions.php:122
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#. Author URI of the theme
+msgid "http://milansvehla.com"
+msgstr "http://milansvehla.com"
+
+#: index.php:5
+msgid "Latest Posts"
+msgstr "Nejnovější příspěvky"
+
+#. Author of the theme
+msgid "Milan Švehla"
+msgstr "Milan Švehla"
+
+#: functions.php:423
+msgid "New"
+msgstr "Nový"
+
+#: functions.php:395
+msgid "New Name"
+msgstr "Nový název"
+
+#: functions.php:427
+msgid "Not found"
+msgstr "Nic nenalezeno"
+
+#: functions.php:428
+msgid "Not found in Trash"
+msgstr "Nic nenalezeno v koši"
+
+#: 404.php:10
+msgid "Page not found"
+msgstr "Stránka neexistuje"
+
+#: functions.php:390
+msgid "Parent"
+msgstr "Nadřazený prvek"
+
+#: functions.php:391
+msgid "Parent:"
+msgstr "Nadřazený prvek:"
+
+#: 404.php:12
+msgid "Return home?"
+msgstr "Zpět na hlavní stránku"
+
+#: functions.php:388 functions.php:426 searchform.php:4
+msgid "Search"
+msgstr "Hledat"
+
+#: loop.php:21 author.php:54 single.php:27 single-vystava.php:65
+#: template-demo.php:20 page.php:53 front-page.php:47
+msgid "Sorry, nothing to display."
+msgstr "Nic tu není."
+
+#: tag.php:7
+msgid "Tag Archive: "
+msgstr "Archiv štítku:"
+
+#: functions.php:386
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr "Kategorie"
+
+#: functions.php:387
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "Kategorie"
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Pro vyhledávání stiskněte Enter."
+
+#: functions.php:393
+msgid "Update"
+msgstr "Aktualizovat"
+
+#: functions.php:424 functions.php:425
+msgid "View"
+msgstr "Zobrazit"
+
+#: functions.php:240
+msgid "View Article"
+msgstr "Zobrazit příspěvek"
+
+#: functions.php:418
+msgid "Výstava"
+msgstr "Výstava"
+
+#: functions.php:417 archive-vystava.php:6
+msgid "Výstavy"
+msgstr "Výstavy"
+
+#: functions.php:167
+msgid "Zápatí 1"
+msgstr "Zápatí 1"
