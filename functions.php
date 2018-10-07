@@ -15,6 +15,8 @@
 	Theme Support
 \*------------------------------------*/
 
+define("THEME_VERSION", "1"); //used to refresh CSS and JS cache if needed
+
 if (!isset($content_width))
 {
     $content_width = 900;
@@ -73,7 +75,7 @@ function theme_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1'); // Custom scripts
+        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), THEME_VERSION); 
         wp_enqueue_script('themescripts'); 
     }
 }
@@ -82,7 +84,7 @@ function theme_header_scripts()
 function theme_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1'); // Conditional script(s)
+        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), THEME_VERSION); 
         wp_enqueue_script('scriptname');
     }
 }
@@ -90,8 +92,7 @@ function theme_conditional_scripts()
 // Load HTML5 Blank styles
 function theme_styles()
 {
-
-    wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), '1', 'all');
+    wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
     wp_enqueue_style('theme');
 }
 
