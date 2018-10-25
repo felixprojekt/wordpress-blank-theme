@@ -15,7 +15,7 @@
 	Theme Support
 \*------------------------------------*/
 
-define("THEME_VERSION", "1"); //used to refresh CSS and JS cache if needed
+define("THEME_VERSION", "1"); //use to refresh CSS and JS cache if needed
 
 if (!isset($content_width))
 {
@@ -94,6 +94,9 @@ function theme_styles()
 {
     wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
     wp_enqueue_style('theme');
+
+    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), THEME_VERSION, 'all');
+    wp_enqueue_style('main');
 }
 
 // Register HTML5 Blank Navigation
