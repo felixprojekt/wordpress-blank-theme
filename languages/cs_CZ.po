@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: G18 theme\n"
+"Project-Id-Version: Wordpress Custom Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-06 14:09+0000\n"
-"PO-Revision-Date: 2018-10-06 14:15+0000\n"
-"Last-Translator: galerie <milan.svehla@gmail.com>\n"
+"POT-Creation-Date: 2018-10-27 19:31+0000\n"
+"PO-Revision-Date: 2018-10-27 19:38+0000\n"
+"Last-Translator: mcmuzea <milan.svehla@gmail.com>\n"
 "Language-Team: Čeština\n"
-"Language: cs_CZ\n"
+"Language: cs-CZ\n"
 "Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : "
 "2;\n"
 "MIME-Version: 1.0\n"
@@ -14,22 +14,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
+#: single.php:22
+msgid "% Comments"
+msgstr "% komentáře"
+
 #: search.php:7
 #, php-format
 msgid "%s Search Results for "
-msgstr "Výsledky vyhledávání pro %s"
+msgstr "%s výsledky vyhledávání pro"
+
+#: single.php:22
+msgid "1 Comment"
+msgstr "1 komentář"
 
 #: author.php:15
 msgid "About "
-msgstr "O Wordpressu"
+msgstr "O nás"
 
-#: functions.php:394 functions.php:419 functions.php:420
+#: functions.php:367
 msgid "Add New"
 msgstr "Přidat"
 
-#: functions.php:389
-msgid "All"
-msgstr "Vše"
+#: functions.php:368
+msgid "Add New Post"
+msgstr "Přidat"
 
 #: archive.php:7
 msgid "Archives"
@@ -37,29 +45,45 @@ msgstr "Archiv"
 
 #: author.php:9
 msgid "Author Archives for "
-msgstr "Archiv autora"
-
-#: functions.php:396
-msgid "Categories"
-msgstr "Kategorie"
+msgstr "Archiv autora "
 
 #: category.php:7
 msgid "Categories for "
-msgstr "Kategorie "
+msgstr "Kategorie"
+
+#: single.php:28
+msgid "Categorised in: "
+msgstr "Kategorie: "
+
+#. Description of the theme
+msgid "Custom WordPress Theme"
+msgstr "Custom Wordpress Theme"
+
+#: functions.php:366
+msgid "CustomPost"
+msgstr "CustomPost"
+
+#: functions.php:365
+msgid "CustomPosts"
+msgstr "CustomPosts"
 
 #. Name of the template
 msgid "Demo Page Template"
 msgstr "Demo Page Template"
 
-#: functions.php:392 functions.php:421 functions.php:422
+#: functions.php:152 functions.php:162
+msgid "Description for this widget-area..."
+msgstr "Description for this widget-area..."
+
+#: functions.php:369
 msgid "Edit"
 msgstr "Upravit"
 
-#. Name of the theme
-msgid "G18 theme"
-msgstr "G18 theme"
+#: functions.php:370
+msgid "Edit Post"
+msgstr "Upravit"
 
-#: functions.php:122
+#: functions.php:106
 msgid "Header Menu"
 msgstr "Header Menu"
 
@@ -67,93 +91,94 @@ msgstr "Header Menu"
 msgid "http://milansvehla.com"
 msgstr "http://milansvehla.com"
 
-#: index.php:5
+#: index.php:7
 msgid "Latest Posts"
-msgstr "Nejnovější příspěvky"
+msgstr "Poslední příspěvky"
+
+#: single.php:22
+msgid "Leave your thoughts"
+msgstr "Napiště nám, co si myslíte"
 
 #. Author of the theme
 msgid "Milan Švehla"
 msgstr "Milan Švehla"
 
-#: functions.php:423
-msgid "New"
-msgstr "Nový"
+#: functions.php:371
+msgid "New Post"
+msgstr "Přidat"
 
-#: functions.php:395
-msgid "New Name"
-msgstr "Nový název"
+#: functions.php:376
+msgid "No posts found"
+msgstr "Nic nenalazeno"
 
-#: functions.php:427
-msgid "Not found"
-msgstr "Nic nenalezeno"
-
-#: functions.php:428
-msgid "Not found in Trash"
-msgstr "Nic nenalezeno v koši"
+#: functions.php:377
+msgid "No posts found in Trash"
+msgstr "V koši nebylo nic nenalezeno"
 
 #: 404.php:10
 msgid "Page not found"
-msgstr "Stránka neexistuje"
+msgstr "Stránka nenalezena"
 
-#: functions.php:390
-msgid "Parent"
-msgstr "Nadřazený prvek"
-
-#: functions.php:391
-msgid "Parent:"
-msgstr "Nadřazený prvek:"
+#: single.php:21 loop.php:16
+msgid "Published by"
+msgstr "Autor: "
 
 #: 404.php:12
 msgid "Return home?"
-msgstr "Zpět na hlavní stránku"
+msgstr "Zpět na hlavní stranu"
 
-#: functions.php:388 functions.php:426 searchform.php:4
+#: searchform.php:4
 msgid "Search"
-msgstr "Hledat"
+msgstr "Vyhledávání"
 
-#: loop.php:21 author.php:54 single.php:27 single-vystava.php:65
-#: template-demo.php:20 page.php:53 front-page.php:47
+#: functions.php:375
+msgid "Search Posts"
+msgstr "Vyhledávání"
+
+#: template-demo.php:20 single.php:40 page.php:21 loop.php:30 author.php:54
 msgid "Sorry, nothing to display."
-msgstr "Nic tu není."
+msgstr "Omlouváme se, nic tu není."
 
 #: tag.php:7
 msgid "Tag Archive: "
-msgstr "Archiv štítku:"
+msgstr "Archiv štítků"
 
-#: functions.php:386
-msgctxt "taxonomy general name"
-msgid "Categories"
-msgstr "Kategorie"
+#: single.php:26
+msgid "Tags: "
+msgstr "Štítky: "
 
-#: functions.php:387
-msgctxt "taxonomy singular name"
-msgid "Category"
-msgstr "Kategorie"
+#: single.php:30
+msgid "This post was written by "
+msgstr "Autor příspěvku: "
 
 #: searchform.php:3
 msgid "To search, type and hit enter."
-msgstr "Pro vyhledávání stiskněte Enter."
+msgstr "Napište vyhledávaný výraz a stiskněte Enter"
 
-#: functions.php:393
-msgid "Update"
-msgstr "Aktualizovat"
-
-#: functions.php:424 functions.php:425
+#: functions.php:372
 msgid "View"
 msgstr "Zobrazit"
 
-#: functions.php:240
+#: functions.php:217
 msgid "View Article"
-msgstr "Zobrazit příspěvek"
+msgstr "Zobrazit"
 
-#: functions.php:418
-msgid "Výstava"
-msgstr "Výstava"
+#: functions.php:373
+msgid "View Post"
+msgstr "Zobrazit"
 
-#: functions.php:417 archive-vystava.php:6
-msgid "Výstavy"
-msgstr "Výstavy"
+#: functions.php:374
+msgid "View Posts"
+msgstr "Zobrazit"
 
-#: functions.php:167
-msgid "Zápatí 1"
+#: functions.php:151
+msgid "Widget Area 1"
 msgstr "Zápatí 1"
+
+#: functions.php:161
+msgid "Widget Area 2"
+msgstr "Zápatí 2"
+
+#. Name of the theme
+msgid "Wordpress Custom Theme"
+msgstr "Wordpress Custom Theme"
