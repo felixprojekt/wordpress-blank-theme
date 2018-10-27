@@ -362,18 +362,19 @@ function create_post_type_html5()
     register_post_type('html5-blank', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('CustomPosts', 'theme'), // Rename these to suit
+            'name' => __('CustomPosts', 'theme'),
             'singular_name' => __('CustomPost', 'theme'),
             'add_new' => __('Add New', 'theme'),
-            'add_new_item' => __('Add New', 'theme'),
+            'add_new_item' => __('Add New Post', 'theme'),
             'edit' => __('Edit', 'theme'),
-            'edit_item' => __('Edit', 'theme'),
-            'new_item' => __('New', 'theme'),
+            'edit_item' => __('Edit Post', 'theme'),
+            'new_item' => __('New Post', 'theme'),
             'view' => __('View', 'theme'),
-            'view_item' => __('View', 'theme'),
-            'search_items' => __('Search', 'theme'),
-            'not_found' => __('Not found', 'theme'),
-            'not_found_in_trash' => __('Not found in Trash', 'theme')
+            'view_item' => __('View Post', 'theme'),
+            'view_items' => __('View Posts', 'theme'),
+            'search_items' => __('Search Posts', 'theme'),
+            'not_found' => __('No posts found', 'theme'),
+            'not_found_in_trash' => __('No posts found in Trash', 'theme')
         ),
         'public' => true,
         'can_export' => true, // Allows export in Tools > Export
@@ -388,7 +389,6 @@ function create_post_type_html5()
             'revisions',
             // 'page-attributes', // Allows menu_order and other page-like attributes
         ), 
-        
     ));
 }
 
