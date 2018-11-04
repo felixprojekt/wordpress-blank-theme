@@ -12,6 +12,8 @@
 
 		</div>
 		<!-- /wrapper -->
+		
+		<?php edit_post_link(); ?>
 
 		<?php wp_footer(); ?>
 
