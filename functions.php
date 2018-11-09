@@ -408,4 +408,14 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+//Edit post link to open in new tab
+add_filter( 'edit_post_link', function( $link, $post_id, $text )
+{
+    // Add the target attribute 
+    if( false === strpos( $link, 'target=' ) )
+        $link = str_replace( '<a ', '<a target="_blank" ', $link );
+
+    return $link;
+}, 10, 3 );
+
 ?>
