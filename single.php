@@ -39,7 +39,6 @@
 		<article>
 			<h1><?php _e( 'Sorry, nothing to display.', 'theme' ); ?></h1>
 		</article>
-
 	<?php endif; ?>
 
 	</section>
