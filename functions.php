@@ -381,7 +381,7 @@ function create_post_type_html5()
         ),
         'public' => true,
         'can_export' => true, // Allows export in Tools > Export
-        //'show_in_rest' => true, // Uncomment this if you want to use Gutenberg with this CPT
+        'show_in_rest' => false, // Set this to true if you want to use Gutenberg with this CPT
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'menu_icon' => 'dashicons-welcome-write-blog',
