@@ -1,16 +1,4 @@
 <?php
-/*
- *  Author: Todd Motto | @toddmotto
- *  URL: theme.com | @theme
- *  Custom functions, support, custom post types and more.
- */
-
-/*------------------------------------*\
-	External Modules/Files
-\*------------------------------------*/
-
-// Load any external files you have here
-
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
@@ -45,7 +33,7 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
-// HTML5 Blank navigation
+// navigation
 function theme_nav()
 {
 	wp_nav_menu(
@@ -70,7 +58,7 @@ function theme_nav()
 	);
 }
 
-// Load HTML5 Blank scripts (header.php)
+// Load scripts (header.php)
 function theme_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
@@ -80,7 +68,7 @@ function theme_header_scripts()
     }
 }
 
-// Load HTML5 Blank conditional scripts
+// Load conditional scripts
 function theme_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
@@ -89,7 +77,7 @@ function theme_conditional_scripts()
     }
 }
 
-// Load HTML5 Blank styles
+// Load styles
 function theme_styles()
 {
     wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
@@ -102,7 +90,7 @@ function theme_styles()
     wp_enqueue_style('responsive');
 }
 
-// Register HTML5 Blank Navigation
+// Register navigation
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
@@ -304,7 +292,6 @@ function themecomments($comment, $args, $depth)
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
-
 // Add Actions
 add_action('init', 'theme_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_print_scripts', 'theme_conditional_scripts'); // Add Conditional Page Scripts
