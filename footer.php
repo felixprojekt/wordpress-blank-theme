@@ -1,4 +1,4 @@
-			<!-- footer -->
+
 			<footer class="footer" role="contentinfo">
 
 				<?php if ( is_active_sidebar( 'widget-area-1' ) ) : ?>
@@ -12,17 +12,12 @@
 					</div>
 				<?php endif; ?>
 
-				<!-- copyright -->
 				<p class="copyright">
 					&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
 				</p>
-				<!-- /copyright -->
-
 			</footer>
-			<!-- /footer -->
 
 		</div>
-		<!-- /wrapper -->
 		
 		<?php edit_post_link(); ?>
 
