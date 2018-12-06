@@ -17,8 +17,6 @@
 
 		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
-		<?php edit_post_link(); ?>
-
 	</article>
 
 <?php endwhile; ?>
