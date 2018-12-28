@@ -86,7 +86,7 @@ function theme_styles()
     wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), THEME_VERSION, 'all');
     wp_enqueue_style('main');
 
-    wp_register_style('responsive', get_template_directory_uri() . '/css/main.css', array(), THEME_VERSION, 'all');
+    wp_register_style('responsive', get_template_directory_uri() . '/css/responsive.css', array(), THEME_VERSION, 'all');
     wp_enqueue_style('responsive');
 }
 
