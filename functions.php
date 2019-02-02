@@ -407,6 +407,9 @@ add_action('admin_head', 'wbt_admin_css');
 
 function wbt_admin_css() {
   echo '<style>
+  .wp-block {
+        max-width: 1300px;
+    }
   </style>';
 }
 
