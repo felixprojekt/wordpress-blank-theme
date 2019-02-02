@@ -403,4 +403,11 @@ add_filter( 'edit_post_link', function( $link, $post_id, $text )
     return $link;
 }, 10, 3 );
 
+add_action('admin_head', 'wbt_admin_css');
+
+function wbt_admin_css() {
+  echo '<style>
+  </style>';
+}
+
 ?>
