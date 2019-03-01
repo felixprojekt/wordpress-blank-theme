@@ -13,9 +13,7 @@
 				</a>
 			<?php endif; ?>
 
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
+			<h1><?php the_title(); ?></h1>
 
 			<span class="date"><?php echo get_the_date() ?></span>
 			<span class="author"><?php _e( 'Published by', 'theme' ); ?> <?php the_author_posts_link(); ?></span>
