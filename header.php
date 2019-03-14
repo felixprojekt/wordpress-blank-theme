@@ -17,7 +17,12 @@
 			<header class="header clear" role="banner">
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+						<?php
+						if ( get_theme_mod( 'header_logo' ) ) : ?>
+							<img src="<?php echo get_theme_mod( 'header_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="logo-img">
+						<?php else : 
+							echo get_bloginfo( 'name', 'display' );
+						endif; ?>
 					</a>
 				</div>
 

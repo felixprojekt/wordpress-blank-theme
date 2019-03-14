@@ -413,4 +413,19 @@ function wbt_admin_css() {
   </style>';
 }
 
+/**
+* Create Logo Setting and Upload Control
+*/
+function brand_logo_in_customizer($wp_customize) {
+    $wp_customize->add_setting('header_logo');
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'header_logo',
+    array(
+        'label' => 'Nahrát logo',
+        'section' => 'title_tagline',
+        'settings' => 'header_logo',
+    ) ) );
+
+}
+add_action('customize_register', 'brand_logo_in_customizer');
+
 ?>
