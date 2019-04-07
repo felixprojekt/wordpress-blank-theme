@@ -53,26 +53,6 @@ function theme_nav()
 	);
 }
 
-// Load scripts (header.php)
-function theme_header_scripts()
-{
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), THEME_VERSION, true); 
-        wp_enqueue_script('themescripts'); 
-    }
-}
-
-// Load conditional scripts
-function theme_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), THEME_VERSION, true); 
-        wp_enqueue_script('scriptname');
-    }
-}
-
-// Load styles
 function theme_styles()
 {
     wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
@@ -83,6 +63,17 @@ function theme_styles()
 
     wp_register_style('responsive', get_template_directory_uri() . '/css/responsive.css', array(), THEME_VERSION, 'all');
     wp_enqueue_style('responsive');
+
+    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), THEME_VERSION, true); 
+        wp_enqueue_script('themescripts'); 
+    }
+
+    // Example of conditional script
+    // if (is_page('pagenamehere')) {
+    //     wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), THEME_VERSION, true); 
+    //     wp_enqueue_script('scriptname');
+    // }
 }
 
 // Register navigation
@@ -288,8 +279,6 @@ function themecomments($comment, $args, $depth)
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
 // Add Actions
-add_action('init', 'theme_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'theme_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
