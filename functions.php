@@ -55,18 +55,12 @@ function theme_nav()
 
 function theme_styles()
 {
-    wp_register_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
-    wp_enqueue_style('theme');
-
-    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), THEME_VERSION, 'all');
-    wp_enqueue_style('main');
-
-    wp_register_style('responsive', get_template_directory_uri() . '/css/responsive.css', array(), THEME_VERSION, 'all');
-    wp_enqueue_style('responsive');
+    wp_enqueue_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
+    wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', array(), THEME_VERSION, 'all');
+    wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css', array(), THEME_VERSION, 'all');
 
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), THEME_VERSION, true); 
-        wp_enqueue_script('themescripts'); 
+        wp_enqueue_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), THEME_VERSION, true); 
     }
 
     // Example of conditional script
