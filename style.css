@@ -30,7 +30,6 @@ html {
 }
 body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:#444;
 }
 
 /* clear */
@@ -49,13 +48,6 @@ body {
 img {
 	max-width:100%;
 	height: auto;
-}
-a {
-	color:#444;
-	text-decoration:none;
-}
-a:hover {
-	color:#444;
 }
 a:focus {
 	outline:0;
