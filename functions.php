@@ -57,7 +57,6 @@ function theme_styles()
 {
     wp_enqueue_style('theme', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all');
     wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', array(), THEME_VERSION, 'all');
-    wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css', array(), THEME_VERSION, 'all');
 
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_enqueue_script('themescripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), THEME_VERSION, true); 
