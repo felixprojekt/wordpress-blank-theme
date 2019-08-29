@@ -151,35 +151,6 @@ function html5wp_pagination()
     ));
 }
 
-// Custom Excerpts
-function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
-{
-    return 20;
-}
-
-// Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
-function html5wp_custom_post($length)
-{
-    return 40;
-}
-
-// Create the Custom Excerpts callback
-function html5wp_excerpt($length_callback = '', $more_callback = '')
-{
-    global $post;
-    if (function_exists($length_callback)) {
-        add_filter('excerpt_length', $length_callback);
-    }
-    if (function_exists($more_callback)) {
-        add_filter('excerpt_more', $more_callback);
-    }
-    $output = get_the_excerpt();
-    $output = apply_filters('wptexturize', $output);
-    $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . $output . '</p>';
-    echo $output;
-}
-
 // Custom View Article link to Post
 function html5_blank_view_article($more)
 {
