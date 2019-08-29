@@ -19,7 +19,11 @@
 
 		</div>
 		
-		<?php edit_post_link(); ?>
+		<?php
+			if ( is_single() || is_page() ) {
+				edit_post_link();
+			}
+		?>
 
 		<?php wp_footer(); ?>
 
