@@ -16,16 +16,12 @@
 					&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
 				</p>
 			</footer>
-
 		</div>
-		
 		<?php
 			if ( is_single() || is_page() ) {
 				edit_post_link();
 			}
 		?>
-
 		<?php wp_footer(); ?>
-
 	</body>
 </html>
