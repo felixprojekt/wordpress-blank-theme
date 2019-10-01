@@ -279,7 +279,6 @@ add_filter('edit_post_link', function ($link, $post_id, $text) {
     return $link;
 }, 10, 3);
 
-add_action('admin_head', 'wbt_admin_css');
 
 function wbt_admin_css()
 {
@@ -289,6 +288,18 @@ function wbt_admin_css()
     }
   </style>';
 }
+
+add_action('admin_head', 'wbt_admin_css');
+
+function theme_editor_styles()
+{
+    add_theme_support('editor-styles');
+
+    //Path to editor CSS
+    //add_editor_style(get_template_directory_uri().'/css/editor.css');
+}
+
+add_action('after_setup_theme', 'theme_editor_styles');
 
 /**
  * Create Logo Setting and Upload Control.
