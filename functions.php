@@ -2,8 +2,8 @@
 /*------------------------------------*\
     Theme Support
 \*------------------------------------*/
-
-define('THEME_VERSION', '1'); //use to refresh CSS and JS cache if needed
+$theme = wp_get_theme();
+define('THEME_VERSION', $theme->Version);
 
 if (function_exists('add_theme_support')) {
     // Add Menu Support
