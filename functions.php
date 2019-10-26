@@ -1,7 +1,4 @@
 <?php
-/*------------------------------------*\
-    Theme Support
-\*------------------------------------*/
 $theme = wp_get_theme();
 define('THEME_VERSION', $theme->Version);
 
@@ -9,12 +6,11 @@ if (function_exists('add_theme_support')) {
     // Add Menu Support
     add_theme_support('menus');
 
-    // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
-    add_image_size('photo', 1440, '', true); // Container width Thumbnail
-    add_image_size('large', 750, '', true); // Large Thumbnail
-    add_image_size('medium', 500, '', true); // Medium Thumbnail
-    add_image_size('small', 250, '', true); // Small Thumbnail
+    add_image_size('photo', 1440, '', true);
+    add_image_size('large', 750, '', true);
+    add_image_size('medium', 500, '', true); 
+    add_image_size('small', 250, '', true); 
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -23,11 +19,6 @@ if (function_exists('add_theme_support')) {
     load_theme_textdomain('theme', get_template_directory().'/languages');
 }
 
-/*------------------------------------*\
-    Functions
-\*------------------------------------*/
-
-// navigation
 function theme_nav()
 {
     wp_nav_menu(
@@ -68,7 +59,6 @@ function theme_styles()
     // }
 }
 
-// Register navigation
 function register_html5_menu()
 {
     register_nav_menus([ // Using array to specify more menus if needed
@@ -114,7 +104,6 @@ function add_slug_to_body_class($classes)
     return $classes;
 }
 
-// If Dynamic Sidebar Exists
 if (function_exists('register_sidebar')) {
     register_sidebar([
         'name' => __('Widget Area 1', 'theme'),
@@ -158,7 +147,6 @@ function html5_blank_view_article($more)
     return '... <a class="view-article" href="'.get_permalink($post->ID).'">'.__('View Article', 'theme').'</a>';
 }
 
-// Remove Admin bar
 function remove_admin_bar()
 {
     return false;
@@ -196,7 +184,6 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
-// Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
 remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
@@ -210,14 +197,10 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
-// Add Filters
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
-// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
-// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
-// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
@@ -227,12 +210,7 @@ add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from 
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 
-// Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
-
-/*------------------------------------*\
-    Custom Post Types
-\*------------------------------------*/
 
 function create_post_type_html5()
 {
