@@ -1,0 +1,18 @@
+{
+  "name": "wp-blank-theme",
+  "version": "1.0.0",
+  "description": "Wordpress theme",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress"
+  ]
+}
