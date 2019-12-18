@@ -164,21 +164,9 @@ function remove_thumbnail_dimensions($html)
     return preg_replace('/(width|height)=\"\d*\"\s/', '', $html);
 }
 
-// Threaded Comments
-function enable_threaded_comments()
-{
-    if (!is_admin()) {
-        if (is_singular() and comments_open() and (1 == get_option('thread_comments'))) {
-            wp_enqueue_script('comment-reply');
-        }
-    }
-}
-
 /*------------------------------------*\
     Actions + Filters + ShortCodes
 \*------------------------------------*/
-// Add Actions
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
