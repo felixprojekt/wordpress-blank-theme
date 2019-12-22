@@ -14,7 +14,7 @@
 
 		<div class="wrapper">
 			
-			<header class="header clear" role="banner">
+			<header class="header" role="banner">
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>">
 						<?php
