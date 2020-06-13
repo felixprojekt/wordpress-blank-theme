@@ -4,4 +4,4 @@ Blank theme for Wordpress, taken and edited from html5blank.com. Package-json.js
 ## How to start
 Go to theme folder and run 
 - `npm i`
-- `gulp`
+- `gulp` to start compiling SCSS and JS
