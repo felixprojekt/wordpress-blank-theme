@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var rename = require("gulp-rename");
+const babel = require('gulp-babel');
 
 gulp.task('sass', function (cb) {
     gulp
@@ -18,10 +20,30 @@ gulp.task('sass', function (cb) {
     cb();
 });
 
+gulp.task('js', function () {
+    return gulp.src(['js/*.js', '!js/*.min.js']) // no need of reading file because browserify does.
+
+        .pipe(sourcemaps.init())
+
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
+
+        .pipe(rename({suffix: '.min'}))
+
+        .pipe(sourcemaps.write('.'))
+
+        .pipe(
+            gulp.dest(function (f) {
+                return f.base;
+            })
+        );
+});
+
 gulp.task(
     'default',
-    gulp.series('sass', function (cb) {
-        gulp.watch('css/*.scss', gulp.series('sass'));
+    gulp.series('sass', 'js', function (cb) {
+        gulp.watch(['css/*.scss', 'js/*.js', '!js/*.min.js'], gulp.series('sass', 'js'));
         cb();
     })
 );
