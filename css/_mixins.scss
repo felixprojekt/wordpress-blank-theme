@@ -86,11 +86,11 @@ or
 Animation mixin, use it with keyframes mixin, like:
 @include animation(neonGlow, 5s);
  */
-@mixin animation($name, $duration) {
-    -webkit-animation: $name $duration infinite; /* Safari 4+ */
-    -moz-animation:    $name $duration infinite; /* Fx 5+ */
-    -o-animation:      $name $duration infinite; /* Opera 12+ */
-    animation:         $name $duration infinite; /* IE 10+, Fx 29+ */
+@mixin animation($name, $duration, $iterations: 1, $curve: ease-in-out) {
+    -webkit-animation: $name $duration $iterations $curve; /* Safari 4+ */
+    -moz-animation:    $name $duration $iterations $curve; /* Fx 5+ */
+    -o-animation:      $name $duration $iterations $curve; /* Opera 12+ */
+    animation:         $name $duration $iterations $curve; /* IE 10+, Fx 29+ */
 }
 
 /*
