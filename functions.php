@@ -43,19 +43,30 @@ function theme_nav()
     );
 }
 
+function theme_custom_script($handle, $path, $deps = [], $in_footer = true) {
+    $uri = get_theme_file_uri($path);
+    $version = filemtime(get_theme_file_path($path));
+    wp_enqueue_script($handle, $uri, $deps, $version, $in_footer);
+}
+
+function theme_custom_style($handle, $path, $deps = [], $media = "all") {
+    $uri = get_theme_file_uri($path);
+    $version = filemtime(get_theme_file_path($path));
+    wp_enqueue_style($handle, $uri, $deps, $version, $media);
+}
+
 function theme_styles()
 {
-    wp_enqueue_style('theme', get_template_directory_uri().'/style.css', [], THEME_VERSION, 'all');
-    wp_enqueue_style('main', get_template_directory_uri().'/css/main.css', [], THEME_VERSION, 'all');
+    theme_custom_style('theme', '/style.css');
+    theme_custom_style('main', '/css/main.css');
 
     if ('wp-login.php' != $GLOBALS['pagenow'] && !is_admin()) {
-        wp_enqueue_script('themescripts', get_template_directory_uri().'/js/scripts.js', ['jquery'], THEME_VERSION, true);
+        theme_custom_script('themescripts', '/js/scripts.js', ['jquery'], true);
     }
 
     // Example of conditional script
     // if (is_page('pagenamehere')) {
-    //     wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), THEME_VERSION, true);
-    //     wp_enqueue_script('scriptname');
+    //     theme_custom_script('scriptname', '/js/scriptname.js', ['jquery'], true);
     // }
 }
 
