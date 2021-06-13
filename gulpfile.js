@@ -11,6 +11,10 @@ gulp.task('sass', function (cb) {
         .pipe(sass({
             outputStyle: "compressed"
         }))
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
         .pipe(sourcemaps.write('.'))
         .pipe(
             gulp.dest(function (f) {
