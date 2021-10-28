@@ -1,8 +1,13 @@
 @import "variables";
 @import "mixins";
+@import "reboot";
+@import "images";
+//@import "links";
 
 body {
-
+	font-size: 22px;
+	line-height: 1.4;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 }
 
 .logo-img {
