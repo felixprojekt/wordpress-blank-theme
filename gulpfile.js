@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require("gulp-rename");
 const babel = require('gulp-babel');
+const minify = require("gulp-babel-minify");
 
 gulp.task('sass', function (cb) {
     gulp
@@ -34,6 +35,8 @@ gulp.task('js', function () {
         }))
 
         .pipe(rename({suffix: '.min'}))
+    
+        .pipe(minify({}))
 
         .pipe(sourcemaps.write('.'))
 
