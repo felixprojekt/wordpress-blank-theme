@@ -4,6 +4,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var rename = require("gulp-rename");
 const babel = require('gulp-babel');
 const minify = require("gulp-babel-minify");
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 
 gulp.task('sass', function (cb) {
     gulp
@@ -12,6 +14,7 @@ gulp.task('sass', function (cb) {
         .pipe(sass({
             outputStyle: "compressed"
         }))
+        .pipe(postcss([ autoprefixer() ]))
         .on('error', function (err) {
             console.log(err.toString());
             this.emit('end');
