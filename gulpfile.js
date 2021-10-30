@@ -7,7 +7,7 @@ const minify = require("gulp-babel-minify");
 
 gulp.task('sass', function (cb) {
     gulp
-        .src('css/*.scss')
+        .src('css/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: "compressed"
@@ -26,7 +26,7 @@ gulp.task('sass', function (cb) {
 });
 
 gulp.task('js', function () {
-    return gulp.src(['js/*.js', '!js/*.min.js']) // no need of reading file because browserify does.
+    return gulp.src(['js/**/*.js', '!js/**/*.min.js']) // no need of reading file because browserify does.
 
         .pipe(sourcemaps.init())
 
@@ -50,7 +50,7 @@ gulp.task('js', function () {
 gulp.task(
     'default',
     gulp.series('sass', 'js', function (cb) {
-        gulp.watch(['css/*.scss', 'js/*.js', '!js/*.min.js'], gulp.series('sass', 'js'));
+        gulp.watch(['css/**/*.scss', 'js/**/*.js', '!js/**/*.min.js'], gulp.series('sass', 'js'));
         cb();
     })
 );
