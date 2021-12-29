@@ -177,7 +177,7 @@ function remove_thumbnail_dimensions($html)
 \*------------------------------------*/
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'theme_create_post_types'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -208,9 +208,9 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
-function create_post_type_html5()
+function theme_create_post_types()
 {
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_post_type('custom_post_type_name_here', // Register Custom Post Type
         [
             'labels' => [
                 'name' => __('CustomPosts', 'theme'),
@@ -241,6 +241,28 @@ function create_post_type_html5()
                 // 'page-attributes', // Allows menu_order and other page-like attributes
             ],
         ]);
+    
+    register_taxonomy('category_for_post_type_name_here', ['category_for_post_type_name_here'], [
+        'labels' => [
+            'name' => _x('CustomPost Categories', 'taxonomy general name', 'theme'),
+            'singular_name' => _x('CustomPost Category', 'taxonomy singular name', 'theme'),
+            'search_items' => __('Search', 'theme'),
+            'all_items' => __('All', 'theme'),
+            'parent_item' => __('Parent', 'theme'),
+            'parent_item_colon' => __('Parent:', 'theme'),
+            'edit_item' => __('Edit', 'theme'),
+            'update_item' => __('Update', 'theme'),
+            'add_new_item' => __('Add New', 'theme'),
+            'new_item_name' => __('New Name', 'theme'),
+            'menu_name' => __('CustomPost Categories', 'theme'),
+        ],
+        'hierarchical' => true, //true for checkboxes, false for tag list
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => ['slug' => 'custom_post_category'],
+    ]);
 }
 
 //Edit post link to open in new tab
