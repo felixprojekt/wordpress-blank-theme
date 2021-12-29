@@ -29,8 +29,6 @@
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 				</h2>
 
-				<?php html5wp_excerpt('html5wp_index'); ?>
-
 				<br class="clear">
 
 				<?php edit_post_link(); ?>
