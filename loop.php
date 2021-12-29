@@ -15,8 +15,6 @@
 		<span class="date"><?php echo get_the_date(); ?></span>
 		<span class="author"><?php _e( 'Published by', 'theme' ); ?> <?php the_author_posts_link(); ?></span>
 
-		<?php html5wp_excerpt('html5wp_index'); ?>
-
 	</article>
 
 <?php endwhile; ?>
