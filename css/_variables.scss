@@ -1,1 +1,40 @@
 
+//Some usefull bootstrap overrides to start with
+
+//Spacing
+$spacer: 1rem;
+$spacers: (
+        0: 0,
+        1: $spacer * .25,
+        2: $spacer * .5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 3,
+        6: $spacer * 6,
+        7: $spacer * 12,
+        8: $spacer * 24,
+) !default;
+
+//Breakpoints changes reflects Wordpress breakpoints
+$grid-breakpoints: (
+        xs: 0,
+        sm: 480px,
+        md: 600px,
+        lg: 782px,
+        xl: 960px,
+        xxl: 1080px,
+        ds: 1280px,
+        xds: 1440px,
+        xxds: 1920px
+);
+
+$container-max-widths: (
+        sm: 440px,
+        md: 570px,
+        lg: 760px,
+        xl: 930px,
+        xxl: 950px,
+        ds: 1180px,
+        xds: 1340px,
+        xxds: 1800px,
+);
